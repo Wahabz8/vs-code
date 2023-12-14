@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid</title>
+    <style>
+      .garden {
+        display: grid;
+        grid-template-columns: repeat(3, 33.3%);
+
+        row-gap: 30px;
+      }
+
+      .ok1 {
+        width: 400px;
+        height: 400px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="garden">
+      <div class="ok1"></div>
+      <div class="ok1"></div>
+      <div class="ok1"></div>
+    </div>
+  </body>
+</html>

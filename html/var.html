@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #input{
+            width: 400px;
+            height: 150px;
+        }
+        .button_in{
+            margin-left: 340px;
+        }
+    </style>
+    <script>
+        function changeline(){
+            let a= document.getElementById("input").value 
+            if (a>18){
+                document.write("you can have a license")
+            }
+            else{
+                document.write("sorry you can't have license" + "<button>" + "Click me" + "</button>")
+
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <input id="input" type="text">
+    <div  class="button_in"><button onclick="changeline()">ENTER</button></div>
+    <div><h1>what is your age</h1></div>
+</body>
+</html>

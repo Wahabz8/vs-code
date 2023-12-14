@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+    function runit(){
+        let userEntered= document.getElementById("takeData").value;
+        axios.get("https://jsonplaceholder.typicode.com/posts/1").then(function (responce){
+
+           if(userEntered ==="body"){
+            document.getElementById("acceptData").innerHTML=responce.data.body;
+           } 
+           else if(userEntered==="id"){
+            document.getElementById("acceptData").innerHTML=responce.data.id;
+           }
+        else{
+            document.getElementById("acceptData").innerHTML=responce.data.title;
+        }
+     }).catch(function(error){
+        console.log(error)
+     });
+    }
+    </script>
+</head>
+<body>
+    <h1>Axios</h1>
+    <h2>Enter What you want?</h2>
+    <ol>
+        <li>body</li>
+        <li>id</li>
+        <li>title</li>
+    </ol>
+    <input  id="takeData" type="text">
+    <button onclick="runit()">Click</button>
+    <div id="acceptData"> </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function runthecode() {
+        let para = document.getElementById("para_value").value;
+        console.log(para);
+        let num = document.getElementById("num_value").value;
+        console.log(num);
+        let len=para.length
+        console.log(len)
+        console.log("short it")
+        let shortit=para.slice(0,num)
+         num=document.write(shortit)
+      }
+    </script>
+  </head>
+  <body>
+    <h1>write the paragraph</h1>
+    <input type="text" name="" id="para_value" />\
+    <input type="number" id="num_value" />
+    <button onclick="runthecode()">click</button>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript</title>
+    <script>
+      function changeColor(yourColor, yourBColor) {
+        console.log("Running Ok");
+        document.getElementById("asdf").style.color = yourColor;
+        changeBackColor(yourBColor);
+      }
+      function changeBackColor(yourBColor) {
+        document.getElementById("asdf").style.backgroundColor = yourBColor;
+      }
+    </script>
+  </head>
+  <body>
+    <div id="asdf">hfyfyfyufrult</div>
+    <button onclick="changeColor('red','green')">Change Color</button>
+    <button onclick="changeColor('pink','grey')">Change Color Pink</button>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      function answer(){
+        document.getElementById("ent").value=eval(document.getElementById("ent").value)
+      }
+      function changeValue(valueEntere) {
+        document.getElementById("ent").value += valueEntere;
+      }
+      function acFunc(){
+        document.getElementById("ent").value=" ";
+      }
+      function per(){
+        document.getElementById("ent").value= document.getElementById("ent").value/100;
+      }
+    </script>
+    <style>
+      th {
+        border: 1px solid gray;
+        background-color: greenyellow;
+        width: 25px;
+        height: 25px;
+        padding: 10px;
+      }
+      td {
+        border: 1px solid gray;
+        background-color: black;
+        color: aliceblue;
+        width: 22px;
+        height: 20px;
+        padding: 13px;
+      }
+      input {
+        width: 199px;
+        border: double;
+        height: 62px;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="ent" type="text" />
+    <table>
+      <tr>
+        <th onclick="changevalue('')">(</th>
+        <th onclick="changeValue('')">)</th>
+        <th onclick="per()">%</th>
+        <th onclick="acFunc()">AC</th>
+      </tr>
+      <tr>
+        <td onclick="changeValue('7')">7</td>
+        <td onclick="changeValue('8')">8</td>
+        <td onclick="changeValue('9')">9</td>
+        <td onclick="changeValue('÷')">÷</td>
+      </tr>
+      <tr>
+        <td onclick="changeValue('4')">4</td>
+        <td onclick="changeValue('5')">5</td>
+        <td onclick="changeValue('6')">6</td>
+        <td onclick="changeValue('*')">*</td>
+      </tr>
+      <tr>
+        <td onclick="changeValue('1')">1</td>
+        <td onclick="changeValue('2')">2</td>
+        <td onclick="changeValue('3')">3</td>
+        <td onclick="changeValue('-')">-</td>
+      </tr>
+      <tr>
+        <td onclick="changeValue('0')">0</td>
+        <td onclick="changeValue('.')">.</td>
+        <td onclick="answer()">=</td>
+        <td onclick="changeValue('+')">+</td>
+      </tr>
+    </table>
+  </body>
+</html>

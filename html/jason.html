@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        function usersignin(){
+    let userId = document.getElementById("userID").value;
+    let passEntered=document.getElementById("pass").value;
+            axios.get(`https://jsonplaceholder.typicode.com/posts/${userId}`).then(function (responce){
+        let storedpassword=responce.data.title;
+  if(passEntered==storedpassword){
+    console.log("Password is ok!")
+    document.getElementById("showTitle").innerHTML=responce.data.title;
+    document.getElementById("showID").innerHTML=responce.data.id;
+    document.getElementById("showBody").innerHTML=responce.data.body;
+  }
+       console.log(responce.data)
+
+          } ).catch(function(error){
+            console.log(error)
+         });
+        }
+    </script>
+  </head>
+  <body>
+    <div>
+      <input type="text" name="" id="userID" />
+      <input type="text" name="" id="pass" />
+ <button onclick="usersignin()">Signin</button>
+<h1 id="showTitle"></h1>
+<h2 id="showID"></h2>
+<div id="showBody"></div>
+    </div>
+  </body>
+</html>
