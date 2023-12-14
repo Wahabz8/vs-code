@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=7, initial-scale=1.0">
+    <title>Document</title>
+    <!-- importing Library -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+function getData(){
+    let userName = document.getElementById("userName").value;
+    let passwordEntered= document.getElementById("pass").value;
+    axios.get(`https://jsonplaceholder.typicode.com/posts/${userName}`).then(function(responce){
+        let StoredPass=responce.data.title;
+        if(passwordEntered==StoredPass){
+            document.getElementById("showID").innerHTML=responce.data.id;
+            document.getElementById("showTitle").innerHTML=responce.data.title;
+            document.getElementById("showBody").innerHTML=responce.data.body;
+        }
+        else{
+            document.getElementById("showID").innerHTML="wrong Password";
+            document.getElementById("showTitle").innerHTML=" ";
+            document.getElementById("showBody").innerHTML=" ";
+        }
+       
+    }).catch( function(error){
+        document.getElementById("showID").innerHTML="Wrong ID";
+        document.getElementById("showTitle").innerHTML=" ";
+            document.getElementById("showBody").innerHTML=" ";
+    })
+}
+    </script>
+    <style>
+        body{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+  <h2>  Enter user Name</h2>
+    <input type="text" id="userName" placeholder="user name">
+    <input type="text"  id="pass" placeholder="Password">
+    <button onclick="getData()">Click me</button>
+    <h1 id="showID"></h1>
+    <h2 id="showTitle"></h2>
+    <div id="showBody"></div>
+</body>
+</html>
